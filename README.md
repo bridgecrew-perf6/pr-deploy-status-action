@@ -6,7 +6,7 @@ Github Action to fetch and output the last PR deploy status to an environment
 Name | Description | Required
 --- | --- | ---
 `repository` | Git Repository name (owner/repository name) | `true`
-`sha` | Github SHA that triggered the event | `true`
+`environment` | Pull Request deployment environment name | `true`
 
 ## Example Usage
 
@@ -21,8 +21,8 @@ jobs:
           # Repository name (Mandatory)
           repository: ${{ github.repository }}
 
-          # Github SHA that triggered the event (Mandatory)
-          sha: ${{ github.sha }}
+          # Pull Request deployment environment name (Mandatory)
+          environment: yabba-da-ba-doo-environment
         env:
           # Default Github Token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

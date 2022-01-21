@@ -8,12 +8,12 @@ inputs:
   repository:
     description: Git Repository name
     required: true
-  sha:
-    description: Github SHA that triggered the event
+  environment:
+    description: Pull request deployment environment name
     required: true
 outputs:
   status:
-    description: Status of the PR's last deployed status in an environment
+    description: Status of the Pull requests last deployed status of an environment
 runs:
   using: node16
   main: dist/index.js
