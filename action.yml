@@ -8,8 +8,8 @@ inputs:
   repository:
     description: Git Repository name
     required: true
-  sha:
-    description: Github SHA that triggered the event
+  environment:
+    description: PR deployment environment name
     required: true
 outputs:
   status:
