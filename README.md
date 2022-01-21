@@ -6,7 +6,7 @@ Github Action to fetch and output the last PR deploy status to an environment
 Name | Description | Required
 --- | --- | ---
 `repository` | Git Repository name (owner/repository name) | `true`
-`pr-number` | Pull Request Number | `true`
+`sha` | Github SHA that triggered the event | `true`
 
 ## Example Usage
 
@@ -19,10 +19,10 @@ jobs:
         uses: envoy/pr-deploy-status-action@v1.0.0
         with:
           # Repository name (Mandatory)
-          repository: envoy/awesome-project
+          repository: ${{ github.repository }}
 
-          # Pull Request Number (Mandatory)
-          pr-number: 101
+          # Github SHA that triggered the event (Mandatory)
+          sha: ${{ github.sha }}
         env:
           # Default Github Token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
