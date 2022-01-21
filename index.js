@@ -14,6 +14,8 @@ const main = async() => {
             environment,
         });
 
+        // picking the top record in the deployments list - the first entry
+        // in the list will have most recent deployment data
         const deploymentID = deployments[0].id
 
         const { data: deploymentStatuses } = await octokit.rest.repos.listDeploymentStatuses({
@@ -22,7 +24,9 @@ const main = async() => {
             deployment_id: deploymentID,
         });
 
-        console.log(deploymentStatuses);
+        // even though the above fetch gives an array of data, since the input
+        // includes the deployment ID - the array will have only one record in it.
+        core.setOutput('status', deploymentStatuses[0].state);
       } catch (error) {
         core.setFailed(error.message);
       }
