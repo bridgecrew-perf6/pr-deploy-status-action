@@ -5,9 +5,8 @@ Github Action to fetch and output the last PR deploy status to an environment
 
 Name | Description | Required
 --- | --- | ---
-`repository` | Git Repository name | `true`
-`pr-number` | PR number in the Git Repository | `true`
-`environment` | PR deployment Environment name | `true`
+`repository` | Git Repository name (owner/repository name) | `true`
+`pr-number` | Pull Request Number | `true`
 
 ## Example Usage
 
@@ -22,8 +21,8 @@ jobs:
           # Repository name (Mandatory)
           repository: envoy/awesome-project
 
-          # PR deployment environment name (Mandatory)
-          environment: yabba-da-ba-doo-environment
+          # Pull Request Number (Mandatory)
+          pr-number: 101
         env:
           # Default Github Token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
