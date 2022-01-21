@@ -11,22 +11,10 @@ const main = async() => {
         const { data: deployments } = await octokit.rest.repos.listDeployments({
             owner: repository.split('/')[0],
             repo: repository.split('/')[1],
-            sha,
+            ref: sha,
         });
 
         console.log(deployments);
-        const deploymentID = deployments[0].id
-        console.log(deploymentID);
-        console.log(deployments[0].created_at);
-        console.log(deployments[0].updated_at);
-
-        const { data: deploymentStatuses } = await octokit.rest.repos.listDeploymentStatuses({
-            owner: repository.split('/')[0],
-            repo: repository.split('/')[1],
-            deployment_id: deploymentID,
-        });
-
-        console.log(deploymentStatuses);
       } catch (error) {
         core.setFailed(error.message);
       }
