@@ -7,6 +7,7 @@ Name | Description | Required
 --- | --- | ---
 `repository` | Git Repository name | `true`
 `pr-number` | PR number in the Git Repository | `true`
+`environment` | PR deployment Environment name | `true`
 
 ## Example Usage
 
@@ -21,9 +22,8 @@ jobs:
           # Repository name (Mandatory)
           repository: envoy/awesome-project
 
-          # PR Number  (Mandatory)
-          pr-number: 101
-
+          # PR deployment environment name (Mandatory)
+          environment: yabba-da-ba-doo-environment
         env:
           # Default Github Token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
