@@ -8,8 +8,8 @@ inputs:
   repository:
     description: Git Repository name
     required: true
-  pr-number:
-    description: Pull Request Number
+  sha:
+    description: Github SHA that triggered the event
     required: true
 outputs:
   status:
