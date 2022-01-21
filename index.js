@@ -11,7 +11,6 @@ const main = async() => {
         const { data: deployments } = await octokit.rest.repos.listDeployments({
             owner: repository.split('/')[0],
             repo: repository.split('/')[1],
-            ref: sha,
         });
 
         console.log(deployments);
