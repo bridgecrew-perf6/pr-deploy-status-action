@@ -1,0 +1,19 @@
+name: Get PR last Deploy Status
+author: gp@envoy.com
+description: Fetches a PR's last deploy status and outputs it
+branding:
+  icon: git-pull-request
+  color: blue
+inputs:
+  repository:
+    description: Git Repository name
+    required: true
+  pr-number:
+    description: PR number in the Git Repository
+    required: true
+outputs:
+  status:
+    description: Status of the PR's last deployed status in an environment
+runs:
+  using: node16
+  main: dist/index.js

@@ -1,0 +1,32 @@
+{
+  "name": "pr-deploy-status-action",
+  "version": "1.0.0",
+  "description": "Github Action to fetch and output a PR's last deploy status in an environment",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/envoy/pr-deploy-status-action.git"
+  },
+  "keywords": [
+    "github",
+    "github-action",
+    "envoy",
+    "pull-request",
+    "pr-deploy",
+    "pr-deploy-status",
+    "ci"
+  ],
+  "author": "gp@envoy.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/envoy/pr-deploy-status-action/issues"
+  },
+  "homepage": "https://github.com/envoy/pr-deploy-status-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0"
+  }
+}
