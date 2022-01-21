@@ -8,8 +8,8 @@ inputs:
   repository:
     description: Git Repository name
     required: true
-  pr-number:
-    description: PR number in the Git Repository
+  environment:
+    description: PR deployment environment name
     required: true
 outputs:
   status:
