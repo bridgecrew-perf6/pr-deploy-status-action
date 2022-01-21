@@ -8484,7 +8484,15 @@ const main = async() => {
             environment,
         });
 
-        console.log(deployments);
+        const deploymentID = deployments[0].id
+
+        const { data: deploymentStatuses } = await octokit.rest.repos.listDeploymentStatuses({
+            owner: repository.split('/')[0],
+            repo: repository.split('/')[1],
+            deployment_id: deploymentID,
+        });
+
+        console.log(deploymentStatuses);
       } catch (error) {
         core.setFailed(error.message);
       }
