@@ -34,7 +34,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-> `GITHUB_TOKEN` required to make necessary API calls to Github to set the Context and the relevant Status in the PR
+> `GITHUB_TOKEN` (*required) to make Github API calls to fetch PR deployment status
 
 ## Local Development
 
