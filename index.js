@@ -26,7 +26,8 @@ const main = async() => {
 
         // even though the above fetch gives an array of data, since the input
         // includes the deployment ID - the array will have only one record in it.
-        core.setOutput('status', deploymentStatuses[0].state);
+        console.log(`deployment id : ${deploymentStatuses[0].id} - deploy state : ${deploymentStatuses[0].state}`)
+        core.setOutput('state', deploymentStatuses[0].state);
       } catch (error) {
         core.setFailed(error.message);
       }
