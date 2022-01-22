@@ -8,6 +8,12 @@ Name | Description | Required
 `repository` | Git Repository name (owner/repository name) | `true`
 `environment` | Pull Request deployment environment name | `true`
 
+## Outputs
+
+Name | Description
+--- | ---
+`status` | Pull requests last deployed status
+
 ## Example Usage
 
 ```
