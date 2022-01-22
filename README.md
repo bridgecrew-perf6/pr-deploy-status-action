@@ -1,5 +1,5 @@
 # PR Deploy Status Github Action
-Github Action to fetch and output the last PR deploy status to an environment 
+Github Action to fetch and output the Pull Requests last deploy status to an environment 
 
 ## Inputs
 
@@ -12,7 +12,7 @@ Name | Description | Required
 
 Name | Description
 --- | ---
-`status` | Pull requests last deployed status
+`state` | Pull requests last deployed state
 
 ## Example Usage
 
