@@ -8495,7 +8495,11 @@ const main = async() => {
         });
 
         // even though the above fetch gives an array of data, since the input
-        // includes the deployment ID - the array will have only one record in it.
+        // includes the deployment ID - the array will have only one record during 
+        // PR action run. There is a possibility for the fetch to have multiple
+        // records when the same deployment goes through more events when the
+        // associated environment becomes inactive or deactivated by the PaaS
+        // provider
         console.log(`deployment id : ${deploymentStatuses[0].id} - deploy state : ${deploymentStatuses[0].state}`)
         core.setOutput('state', deploymentStatuses[0].state);
       } catch (error) {
